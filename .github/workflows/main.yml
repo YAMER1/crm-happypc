@@ -1,0 +1,22 @@
+name: 🚀 Push site HappyPC.Ru
+on:
+  push:
+    branches:
+      - main
+jobs:
+  web-deploy:
+    name: 🎉 Deploy
+    runs-on: ubuntu-latest
+    steps:
+    - name: 🚚 Get latest code
+      uses: actions/checkout@v2
+        
+    - name: 📂 Sync files Happypc ru
+      uses: SamKirkland/FTP-Deploy-Action@4.3.0
+      with:
+        server: 62.217.177.57
+        username: bitrix
+        password: ${{ secrets.ftp_password }}
+        server-dir: /home/bitrix/www/
+        protocol: ftp
+        port: 21

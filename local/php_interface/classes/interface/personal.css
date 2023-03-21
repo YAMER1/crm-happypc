@@ -1,0 +1,38 @@
+.d-flex {
+    display: flex
+}
+
+.flex-column {
+    flex-flow: column
+}
+.align-items-center {
+    align-items: center
+}
+.justify-content-center {
+    justify-content: center
+}
+
+#personal-profit {
+    margin-right: 1rem
+}
+
+#personal-profit .text-white {
+    color: white
+}
+
+#personal-profit .fw-bold {
+    font-weight: 500
+}
+
+#personal-profit .font-adaptive {
+    font-size: calc(0.7rem + 0.4vw)
+}
+
+.bx24-connection-status-wrap {
+    display: none;
+}
+
+#timeman-container {
+    display: flex;
+    flex-flow: row
+}

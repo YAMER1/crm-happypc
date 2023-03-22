@@ -9,11 +9,11 @@ class Personal_interface {
         $USER = new \CUser;
         
         $dbUser = \Bitrix\Main\UserTable::getList([
-            'select' => ['UF_DEALS_CURRENT_COUNTS', 'UF_DEALS_CURRENT_BUDGET_SUMM', 'UF_DEALS_CURRENT_PAY', 'UF_DEALS_REWARD_PERCENT', 'UF_USR_1679487014364'],
+            'select' => ['UF_DEALS_CURRENT_COUNTS', 'UF_DEALS_CURRENT_BUDGET_SUMM', 'UF_DEALS_CURRENT_PAY', 'UF_DEALS_REWARD_PERCENT', 'UF_USR_1679496810069'],
             'filter' => ['ID' => $USER->GetID()]
         ])->fetch();
         
-        if ($dbUser["UF_USR_1679487014364"] == "1"){
+        if ($dbUser["UF_USR_1679496810069"] == "1"){
             define("UF_DEALS_REWARD_PERCENT", $dbUser["UF_DEALS_REWARD_PERCENT"]); // Процент вознаграждения
             if (!empty(UF_DEALS_REWARD_PERCENT)){ // Если задан процент вознаграждения, выводим меню
                 define("UF_DEALS_CURRENT_COUNTS", $dbUser["UF_DEALS_CURRENT_COUNTS"]); // Общее число сделок за месяц

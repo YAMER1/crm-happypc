@@ -15,11 +15,11 @@ class Personal {
             'filter' => ['ID' => $assigned_by_id]
         ])->fetch();
         
-        if (/*($arFields["STAGE_ID"] == "C2:WON") && */(!empty($dbUser['UF_DEALS_REWARD_PERCENT']))){ // Если стадия воронки Продажа сборок завершена и у пользователя задан процент вознаграждения
+        if (/*($arFields["STAGE_ID"] == "C1:WON") && */(!empty($dbUser['UF_DEALS_REWARD_PERCENT']))){ // Если стадия воронки Продажа сборок завершена и у пользователя задан процент вознаграждения
             // Получаем информацию о сделках
             $arDeals=DealTable::getList([ // Выводим все сделки с d7
                 'order'=>['ID' => 'DESC'],
-                'filter'=>['ASSIGNED_BY_ID' => $assigned_by_id, 'STAGE_ID' => 'C2:WON'], // Фильтр по Ответственному сделки, стадия Успех
+                'filter'=>['ASSIGNED_BY_ID' => $assigned_by_id, 'STAGE_ID' => 'C1:WON'], // Фильтр по Ответственному сделки, стадия Успех
                 'select'=>['CLOSEDATE', 'UF_CRM_1667140609527'], // Дата закрытия сделки и бюджет
                 // 'cache' => ['ttl' => 3600] // Время кеша не нужно
             ])->fetchAll();

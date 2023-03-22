@@ -5,7 +5,7 @@ require_once($_SERVER['DOCUMENT_ROOT'] . "/bitrix/modules/main/include/prolog_be
 use Bitrix\Crm\DealTable;
 $arDeals=DealTable::getList([ // Выводим все сделки с d7
     'order'=>['ID' => 'DESC'],
-    'filter'=>['ASSIGNED_BY_ID' => '14', 'STAGE_ID' => 'C2:WON'], // Фильтр по Ответственный, стадия Успех
+    'filter'=>['ASSIGNED_BY_ID' => '14', 'STAGE_ID' => 'C1:WON'], // Фильтр по Ответственный, стадия Успех
     'select'=>['CLOSEDATE', 'UF_CRM_1667140609527'], // Дата закрытия сделки и бюджет
     // 'cache' => ['ttl' => 3600] // Время кеша не нужно
 ])->fetchAll();

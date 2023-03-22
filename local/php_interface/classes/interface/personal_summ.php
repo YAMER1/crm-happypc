@@ -8,8 +8,16 @@ class Personal {
 	{
         global $USER;
         
+        // file_put_contents(($_SERVER['DOCUMENT_ROOT']."/local/php_interface/classes/interface/voronka.txt"), print_r($arFields, true));
+        
         // Получим данные об ответственном, его процент вознаграждения
-        $assigned_by_id = $arFields["MODIFY_BY_ID"]; // Ответственный по сделке
+        if (!empty($arFields["ASSIGNED_BY_ID"])){
+            $assigned_by_id = $arFields["ASSIGNED_BY_ID"]; // Ответственный по сделке в воронке
+        }
+        if (!empty($arFields["MODIFY_BY_ID"])){
+            $assigned_by_id = $arFields["MODIFY_BY_ID"]; // Ответственный по сделке в списке
+        }
+        
         $dbUser = \Bitrix\Main\UserTable::getList([
             'select' => ['UF_DEALS_REWARD_PERCENT'],
             'filter' => ['ID' => $assigned_by_id]

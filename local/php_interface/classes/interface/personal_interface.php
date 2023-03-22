@@ -7,6 +7,7 @@ class Personal_interface {
 	{
         global $USER;
         $USER = new \CUser;
+        
         $dbUser = \Bitrix\Main\UserTable::getList([
             'select' => ['UF_DEALS_CURRENT_COUNTS', 'UF_DEALS_CURRENT_BUDGET_SUMM', 'UF_DEALS_CURRENT_PAY', 'UF_DEALS_REWARD_PERCENT', 'UF_USR_1679487014364'],
             'filter' => ['ID' => $USER->GetID()]
@@ -29,7 +30,7 @@ class Personal_interface {
 
                     /* #personal-profit на всякий случай, чтобы не заменить другие стили */
 
-                Asset::getInstance()->addCss("/local/php_interface/classes/interface/personal.css"); // Подклчюение css
+                Asset::getInstance()->addCss("/local/php_interface/classes/interface/personal.css"); // Подключение css
 
                 ?>
                 <script>

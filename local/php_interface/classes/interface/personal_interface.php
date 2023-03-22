@@ -13,6 +13,8 @@ class Personal_interface {
             'filter' => ['ID' => $USER->GetID()]
         ])->fetch();
         
+        print_r($dbUser["UF_SHOW_DEALS_INTERFACE"]);
+        
         if ($dbUser["UF_SHOW_DEALS_INTERFACE"] == "1"){
             define("UF_DEALS_REWARD_PERCENT", $dbUser["UF_DEALS_REWARD_PERCENT"]); // Процент вознаграждения
             if (!empty(UF_DEALS_REWARD_PERCENT)){ // Если задан процент вознаграждения, выводим меню

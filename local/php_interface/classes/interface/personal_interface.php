@@ -34,7 +34,7 @@ class Personal_interface {
     <? if ((empty($_REQUEST["action"])) && (empty($_REQUEST["ACTION"]))){ // Скрипт начинает загружаться вместе с планированием задач на день на ajax, это исправляет ?>
         <script>
         document.addEventListener("DOMContentLoaded", () => {
-            document.getElementById('timeman-container').insertAdjacentHTML("afterbegin", "<div id='personal-profit' class='d-flex flex-column align-items-center justify-content-center'><span class='text-white fw-bold font-adaptive' style='line-height:1.2rem'>За <?=UF_CURRENT_MONTH?> закрыто <?=UF_DEALS_CURRENT_COUNTS?> сделок на <?=UF_DEALS_CURRENT_BUDGET_SUMM?> руб<br> Зарплата <?=UF_DEALS_CURRENT_PAY?> ₽ за <?=UF_DEALS_REWARD_PERCENT?>% от суммы бюджета</span></div>");
+            document.getElementById('timeman-container').insertAdjacentHTML("afterbegin", "<div id='personal-profit' class='d-flex flex-column align-items-center justify-content-center'><span class='text-red fw-bold font-adaptive' style='line-height:1.2rem'>За <?=UF_CURRENT_MONTH?> закрыто <?=UF_DEALS_CURRENT_COUNTS?> сделок на <?=UF_DEALS_CURRENT_BUDGET_SUMM?> руб<br> Зарплата <?=UF_DEALS_CURRENT_PAY?> ₽ за <?=UF_DEALS_REWARD_PERCENT?>% от суммы бюджета</span></div>");
         });
         </script>
 <?

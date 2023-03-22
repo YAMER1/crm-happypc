@@ -20,6 +20,10 @@
     color: white
 }
 
+#personal-profit .text-red {
+    color: red
+}
+
 #personal-profit .fw-bold {
     font-weight: 500
 }

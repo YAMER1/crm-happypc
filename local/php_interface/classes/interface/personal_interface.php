@@ -3,7 +3,7 @@ namespace CRM24;
 use Bitrix\Main\Page\Asset;
 
 class Personal_interface {
-	function Show_profit()
+	public static function Show_profit()
 	{
         global $USER;
         $USER = new \CUser;

@@ -4,7 +4,7 @@ use Bitrix\Crm\DealTable;
 
 class Personal {
 
-	function Profit(&$arFields)
+	public static function Profit(&$arFields)
 	{
         global $USER;
         

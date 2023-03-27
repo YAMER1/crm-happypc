@@ -8,7 +8,7 @@ use Bitrix\Main\Loader;
 file_get_contents($_SERVER['DOCUMENT_ROOT']."/local/php_interface/classes/interface/test.txt");
 */
 $events = [];
-$filter_count = ((($_REQUEST["ACTION"] == "SAVE_PROGRESS") && strpos($_REQUEST["VALUE"], "C1:")!== false) || ($_REQUEST["action"] == "status" && strpos($_REQUEST["status"], "C1:") !== false));
+$filter_count = ((($_REQUEST["ACTION"] == "SAVE_PROGRESS") && str_contains($_REQUEST["VALUE"], "C1:")) || ($_REQUEST["action"] == "status" && str_contains($_REQUEST["status"], "C1:")));
 if ($filter_count) { // Скрипт загружается повторно при открытии окон, но с пустыми запросами 1 раз
     $personal_count[] = [
         "\CRM24\Personal" => "/local/php_interface/classes/interface/personal_summ.php", // Проверка имени

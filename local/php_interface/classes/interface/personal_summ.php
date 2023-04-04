@@ -23,7 +23,7 @@ class Personal {
             'filter' => ['ID' => $assigned_by_id]
         ])->fetch();
         
-        if ((str_contains($arFields["STAGE_ID"], "C1:")) && (!empty($dbUser['UF_DEALS_REWARD_PERCENT']))){ // Если стадия воронки Продажа сборок завершена и у пользователя задан процент вознаграждения
+       
             // Получаем информацию о сделках
             $arDeals=DealTable::getList([ // Выводим все сделки с d7
                 'order'=>['ID' => 'DESC'],
@@ -54,7 +54,7 @@ class Personal {
                 "UF_DEALS_CURRENT_PAY" => $deals_pay // Зарплата за текущий месяц
             ];
             $user->Update($assigned_by_id, $user_fields); // Записываем обновлённое значение            
-        }
+        
         
 		return true; // все значения прошли валидацию, вернем true
 	}

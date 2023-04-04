@@ -35,7 +35,7 @@ require_once($_SERVER['DOCUMENT_ROOT']."/bitrix/modules/main/include/prolog_befo
                         'n0' => array('VALUE' => "79871524337", 'VALUE_TYPE' => 'WORK')
                      ) 
                  ),
-            //"COMPANY_ID" => $companyId, раньше только к одной можно было привязать
+            // "COMPANY_ID" => $companyId, раньше только к одной можно было привязать
             // "COMPANY_IDS"=>array(1,2,3), //массив id компаний, сейчас можно так                
             "ASSIGNED_BY_ID" => "1",//id ответственного менеджера
             "UF_CRM_63A99A260CB47" => "vkontaktetest",
